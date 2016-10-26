@@ -248,7 +248,7 @@
                 //to fix line
                 var lA = getLengthAngle(_this.lineX1, newX, _this.lineY1, newY);
                 _this.line.css({
-                    'width': (lA.length + 10) + 'px',
+                    'width': (lA.length + option.lines_height) + 'px',
                     'transform': 'rotate(' + lA.angle + 'deg)'
                 });
 
@@ -257,7 +257,7 @@
 
 
             //to create new line
-            var line = $('<div class="patt-lines" style="top:' + (newY - 5) + 'px; left:' + (newX - 5) + 'px"></div>');
+            var line = $('<div class="patt-lines" style="top:' + (newY - option.lines_height/2) + 'px; left:' + (newX - option.lines_height/2) + 'px"></div>');
             _this.line = line;
             _this.lineX1 = newX;
             _this.lineY1 = newY;
@@ -434,6 +434,7 @@
         matrix: [3, 3],
         margin: 20,
         radius: 25,
+        lines_height: 10,
         patternVisible: true,
         lineOnMove: true,
         delimiter: "", // a delimiter between the pattern
